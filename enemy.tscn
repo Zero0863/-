@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://5rx1xnbnx5gt"]
+
+[ext_resource type="Script" uid="uid://r1xn3icjhqcf" path="res://enemy.gd" id="1_4gyqm"]
+[ext_resource type="PackedScene" uid="uid://l4bbhn02xs40" path="res://bullet.tscn" id="2_iifgy"]
+[ext_resource type="Texture2D" uid="uid://ruuk2grdu3fb" path="res://monochrome_tilemap.png" id="2_qi2p4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bj8d5"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ni5yj"]
+size = Vector2(16, 16)
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1213608607]
+script = ExtResource("1_4gyqm")
+bullet_scene = ExtResource("2_iifgy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=276080521]
+texture = ExtResource("2_qi2p4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1641813395]
+shape = SubResource("RectangleShape2D_bj8d5")
+
+[node name="HitArea" type="Area2D" parent="." unique_id=823929445 groups=["enemy_hurt"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea" unique_id=461485677]
+shape = SubResource("RectangleShape2D_ni5yj")
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=1733006962]
+modulate = Color(0.95686275, 0, 0, 1)
+offset_left = -10.999999
+offset_top = -8.0
+offset_right = -6.999999
+offset_bottom = 14.239058
+rotation = -1.5690862
+max_value = 3.0
+value = 3.0
+fill_mode = 2
+show_percentage = false

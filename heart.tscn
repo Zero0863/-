@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bye7pmm46ddey"]
+
+[ext_resource type="Script" uid="uid://dy06ji5b6pl3b" path="res://heart.gd" id="1_7p8dj"]
+[ext_resource type="Texture2D" uid="uid://meg2mh2iw4x4" path="res://heart.png" id="2_pembh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bj8d5"]
+size = Vector2(16, 16)
+
+[node name="Heart" type="Area2D" unique_id=721395031]
+script = ExtResource("1_7p8dj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=876398630]
+texture = ExtResource("2_pembh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1760795050]
+shape = SubResource("RectangleShape2D_bj8d5")
